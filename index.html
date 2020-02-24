@@ -816,6 +816,7 @@
         </div>
     </div>
     <section id="details" style="display: none;">
+
         <div class="contact-info">
             <h2>Uw gegevens</h2>
             <form class="clearfix" style="display: block;">
@@ -859,6 +860,7 @@
             </div>
         </div>
     </section>
+
     <section id="card">
         <div class="contact-info">
             <h2>Betaalgegevens</h2>
@@ -897,6 +899,7 @@
             </div>
         </div>
     </section>
+
     <section class="processing">
         <div class="check">
             <span></span>
@@ -912,12 +915,7 @@
         </div>
         <span class="message">Verwerking</span>
     </section>
-    <section id="check">
-        <h2>Bevestigen</h2>
-        <p>Bevestig uw donatie</p>
-        <span>€....</span>
-        <button class="next" type="button">Bevestigen</button>
-    </section>
+
     <section id="confirm">
         <h2>Bedankt!</h2>
         <p>Uw <span class="amount">$3</span> donatie zal ons helpen!</p>
@@ -1080,7 +1078,7 @@
                 easing: "easeInQuart",
                 direction: "left"
             }, 700, function () {
-                $("#check").show("slide", {
+                $(".processing").show("slide", {
                     easing: "easeOutQuart",
                     direction: "right"
                 }, 700);
@@ -1104,7 +1102,7 @@
                 easing: "easeInQuart",
                 direction: "left"
             }, 700, function () {
-                $(".processing").fadeIn(1500, function () {
+                $(".processing").fadeIn(1500, function () {             
                     $(".progress").animate({
                         width: "14em"
                     }, 3500, "easeInOutCirc", function () {
