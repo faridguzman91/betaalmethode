@@ -7,6 +7,7 @@
 
     <style class="INLINE_PEN_STYLESHEET_ID">
         body {
+            background-image: ;
             background-color: #1b7ea3;
             text-align: center;
             font-family: 'Roboto';
@@ -23,9 +24,9 @@
 
         button {
             margin-top: 4em;
-            background-color: #ff3a3a;
-            border: 1px solid #ff7373;
-            color: white;
+            background-color: #ffffff;
+            border: 3px solid #1b7ea3;
+            color:  #1b7ea3;
             font-family: 'Roboto';
             font-weight: 900;
             font-size: 1.4rem;
@@ -88,6 +89,48 @@
             border-radius: 0 0 0.3rem 0.3rem;
         }
 
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 193px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
         #custom {
             max-width: 400px;
             margin: 0 auto;
@@ -147,6 +190,7 @@
             font-size: 1.2em;
             margin-top: 1.2em;
             transition: all 0.2s ease;
+            color: white;
         }
 
         #custom button:hover,
@@ -212,6 +256,7 @@
 
         #custom .next {
             float: right;
+            color: white;
         }
 
         #details {
@@ -269,6 +314,7 @@
 
         #details .next {
             float: right;
+            color: white;
         }
 
         #details h2 {
@@ -324,13 +370,14 @@
 
         #details label {
             text-align: left;
-            display: block;
+            display: inline-block;
             color: white;
             font-weight: 300;
             font-size: 0.8em;
             text-transform: none;
             letter-spacing: 0.2em;
-            margin: 1.6em 0 0.3em 0.2em;
+            margin: 0em 0 0.3em 0em;
+            line-height: 1.60;
         }
 
         #details input[type="text"] {
@@ -352,6 +399,7 @@
         #details button {
             background-color: #2dbb55;
             border-color: #2dbb55;
+            color: white;
             font-size: 1.2em;
             margin-top: 1.2em;
             transition: all 0.2s ease;
@@ -390,6 +438,7 @@
             width: 2.4em;
             height: 2.4em;
             border-radius: 50%;
+            left: 30%;
         }
 
         #card .back span {
@@ -427,7 +476,10 @@
         }
 
         #card .next {
-            float: right;
+            right: 30%;
+            color: white;
+            position: absolute;
+            float: initial;
         }
 
         #card h2 {
@@ -628,6 +680,31 @@
             border-radius: 0.2em;
         }
 
+        #confirm button {
+
+            color: white;
+            background-color: #2dbb55;
+            padding: 1em 0.30em;
+            margin: 15px 0.15em;
+            font-weight: 700;
+            text-shadow: 2px 2px #1f9a42;
+            font-size: 1em;
+            border-radius: 1.2em;
+        }
+
+        #confirm button:hover,
+        #confirm button:focus {
+            -ms-transform: scale(1.04, 1.04);
+            /* IE 9 */
+            -webkit-transform: scale(1.04, 1.04);
+            /* Safari */
+            transform: scale(1.04, 1.04);
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+
         .processing {
             display: none;
         }
@@ -720,11 +797,12 @@
             width: 28px;
             height: 28px;
             position: relative;
-            margin: 20px auto;
+            margin: 10px auto;
             background: #fcfff4;
             background: -webkit-gradient(linear, left top, left bottom, from(#fcfff4), color-stop(40%, #dfe5d7), to(#b3bead));
             background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
             box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+            left: -42%;
         }
 
         .squaredTwo label {
@@ -773,10 +851,15 @@
 
 
         .nieuwsbrief {
-
+            position: inherit;
             color: white;
-
+            display: block ruby;
+            top: -48%;
+            left: 200%       
         }
+     
+
+
     </style>
 
 </head>
@@ -797,6 +880,7 @@
             <label for="other">Anders</label>
         </form>
     </div>
+
     <div id="custom" style="margin-left: 430px; margin-right: 430px; display: none;">
         <h2>Hoeveel wilt u doneren?</h2>
         <form name="customDonation" id="customDonation" style="display: block;">
@@ -829,23 +913,35 @@
                     <input type="text">
                 </div>
                 <div class="input-group-1">
-                    <label>Email Adres</label>
+                    <label>E-mailadres</label>
                     <input type="text">
                 </div>
+
+                <br>
+
+                <div class="checkbox">
+                <div class="squaredTwo">
+                    <input type="checkbox" value="None" id="squaredTwo" name="check" checked />
+                    <label for="squaredTwo"><p class="nieuwsbrief">Schrijf me in voor de nieuwsbrief</p></label>
+                    
+                </div>
+
+                
+
+            </div>
+
+
                 <hr>
                 <div class="input-group-1">
                     <label>Straatnaam en Huisnummer</label>
                     <input type="text">
                 </div>
-                <div class="input-group-3">
-                    <label>Stad</label>
+               
+                <div class="input-group-2">
+                    <label>Plaats</label>
                     <input type="text">
                 </div>
-                <div class="input-group-3">
-                    <label>Provincie</label>
-                    <input type="text">
-                </div>
-                <div class="input-group-3">
+                <div class="input-group-2">
                     <label>Postcode</label>
                     <input type="text">
                 </div>
@@ -869,25 +965,18 @@
                     <label>IBAN</label>
                     <input type="text">
                 </div>
-                <div class="clearfix">
-                    <div class="input-group-2">
-                        <label>Bank</label>
-                        <input type="text">
+                <div class="dropdown">
+                    <button class="dropbtn">Kies bank</button>
+                    <div class="dropdown-content">
+                    <a href="#">ABN AMRO</a>
+                    <a href="#">Rabobank</a>
+                    <a href="#">ING</a>
                     </div>
-                    <div class="input-group-2">
-                        <label>BIC</label>
-                        <input type="text">
-                    </div>
+                  </div>
+
                 </div>
                 <hr>
-                <div class="input-group-1">
-                    <label>Bedrijfsnaam</label>
-                    <input type="text">
-                </div>
-                <div class="input-group-1">
-                    <label>KvK</label>
-                    <input type="text">
-                </div>
+              
             </form>
             <div class="clearfix">
                 <button class="back" type="button">Back
@@ -902,15 +991,19 @@
 
 
     <section id="confirm">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <h2>Bedankt!</h2>
         <p>Uw <span class="amount">$3</span> donatie zal ons helpen!</p>
 
-        <div class="checkbox"></div>
-        <div class="squaredTwo">
-            <input type="checkbox" value="None" id="squaredTwo" name="check" checked />
-            <label for="squaredTwo"></label>
-        </div>
-        <p class="nieuwsbrief">Schrijf me in voor de nieuwsbrief</p>
+        
+      <button class="done" type="button">Gereed</button>
 
     </section>
     <script
@@ -1051,7 +1144,7 @@
                 easing: "easeInQuart",
                 direction: "right"
             }, 700, function () {
-                $(".details").show("slide", {
+                $("#details").show("slide", {
                     easing: "easeOutQuart",
                     direction: "left"
                 }, 700);
@@ -1072,17 +1165,26 @@
         });
 
 
-      $('#card .next').on("click", function () {
-      $("#card").hide("slide", {
-      easing: "easeInQuart",
-      direction: "left"
-      }, 700, function () {
-      $("#confirm").show("slide", {
-      easing: "easeOutQuart",
-      direction: "left"
-      }, 700);
-      });
-      });
+        $('#card .next').on("click", function () {
+            $("#card").hide("slide", {
+                easing: "easeInQuart",
+                direction: "left"
+            }, 700, function () {
+                $("#confirm").show("slide", {
+                    easing: "easeOutQuart",
+                    direction: "left"
+                }, 700);
+            });
+
+           
+            });
+
+            $('#confirm .done').on("click", function () {
+            $("#confirm").hide("blind", {
+                easing: "easeInQuart",
+                direction: "up"
+            });
+    });
         //# sourceURL=pen.js
     </script>
 
